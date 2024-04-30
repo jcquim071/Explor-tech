@@ -20,8 +20,8 @@ nav:
 #  - Exemple de fichiers de soumission:
 
 #theme: 'readthedocs'
-#theme:  material
-theme : mkdocs
+theme:  material
+#theme : mkdocs
 #theme: yeti
 #theme_dir: explor_theme
 
