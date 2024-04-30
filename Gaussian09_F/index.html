@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Gaussian 09 - EXPLOR</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">EXPLOR</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Se connecter <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../console/" class="dropdown-item">En mode console</a>
+</li>
+                                    
+<li>
+    <a href="../graphique/" class="dropdown-item">En mode graphique</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../materiel/" class="nav-link">Ressources de calcul</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stockage/" class="nav-link">Espaces de stockage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../applications/" class="nav-link">Logiciels</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Exemple de scripts pour quelques programmes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Gaussian 09</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../transfert/" class="nav-link">Transferts de données</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../module/" class="nav-link">Utilisation des modules</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../slurm/" class="nav-link">Soumission de job</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bp/" class="nav-link">Bonnes pratiques</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Questions/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chartes/" class="nav-link">Charte d'utilisation du Mésocentre EXPLOR</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formulaires/" class="nav-link">Formulaires</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../applications/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../transfert/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#gaussian" class="nav-link">Gaussian</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#exemple-de-script-de-job-en-gaussian-lancer-une-tache-en-gaussian-pendant-une-journee-en-utilisant-la-version-gaussian09pgi-avec-16-taches-de-slurm-demandees-et-un-noeud-ivy" class="nav-link">Exemple de script de job en Gaussian : Lancer une tache en gaussian pendant une journee en utilisant la version (Gaussian/09/pgi) avec 16 taches de slurm demandees et un Noeud ivy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="gaussian">Gaussian</h1>
+<h2 id="exemple-de-script-de-job-en-gaussian-lancer-une-tache-en-gaussian-pendant-une-journee-en-utilisant-la-version-gaussian09pgi-avec-16-taches-de-slurm-demandees-et-un-noeud-ivy">Exemple de script de job en Gaussian : Lancer une tache en gaussian pendant une journee en utilisant la version (Gaussian/09/pgi) avec 16 taches de slurm demandees et un Noeud ivy</h2>
+<p>Cet exemple comprend deux parties :</p>
+<ul>
+<li>
+<p>Le premier contient un exemple de fichier d'entree de Gaussian09 qui inclut plusieurs options importantes telles que le nombre de processeurs pour la memoire partagee, et la quantite de memoire dynamique (KB, MB, et GB)</p>
+</li>
+<li>
+<p>Le second contient un exemple de script de job Gaussian09 execute pendant une journee avec 16 taches de slurm demandees et un noeud ivy</p>
+</li>
+</ul>
+<h3 id="exemple-de-fichier-dentree-input-gaussian">Exemple de fichier d'entree (input) Gaussian :</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Avant de soumettre un job de Gaussian, vous devez verifier que le nombre de processeurs (%NProcShared=16) et le nombre total de taches de slurm demandees (#SBATCH -n 16) sont les memes     </p>
+<p>Pour la memoire du fichier d'entree gaussien, cela depend de la partition :</p>
+<ul>
+<li>hf  : 15GB /coeur ou 120GB/noeud</li>
+<li>ivy : 3.2GB/coeur ou  50GB/noeud</li>
+<li>std : 3.2GB/coeur ou 100GB/noeud</li>
+</ul>
+<p>Il est important de savoir que les partitions hf et ivy sont meilleures/plus rapides pour utiliser Gaussian09</p>
+<p>Veuillez ne pas oublier de creer le fichier checkpoint</p>
+</div>
+<div class="codehilite"><pre><span></span><code><span class="c">%NProcShared=16</span>
+<span class="c">%Mem=</span>
+<span class="c">%Chk=myfile.chk</span>
+#<span class="w"> </span><span class="n">HF</span><span class="w"> </span><span class="mi">6</span><span class="o">-</span>31<span class="n">G</span><span class="o">*</span><span class="w"> </span><span class="n">OPT</span>
+
+<span class="n">Title</span>
+
+<span class="s">0</span><span class="w"> </span><span class="s">1</span>
+<span class="n">O</span><span class="w">    </span><span class="s">x</span><span class="w"> </span><span class="s">y</span><span class="w"> </span><span class="s">z</span>
+<span class="n">H</span><span class="w">    </span><span class="s">x</span><span class="w"> </span><span class="s">y</span><span class="w"> </span><span class="s">z</span>
+<span class="n">H</span><span class="w">    </span><span class="s">x</span><span class="w"> </span><span class="s">y</span><span class="w"> </span><span class="s">z</span>
+</code></pre></div>
+
+<h3 id="exemple-de-script-de-job-de-gaussian09">Exemple de script de job de Gaussian09</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">## Partition</span>
+<span class="c1">#SBATCH -p ivy</span>
+<span class="c1">## Nombre de noeuds</span>
+<span class="c1">#SBATCH -N 1</span>
+<span class="c1">## Nombre de taches demandes</span>
+<span class="c1">#SBATCH -n 16</span>
+<span class="c1">## Nom du job</span>
+<span class="c1">#SBATCH -J NAME</span>
+<span class="c1">## Time of a job</span>
+<span class="c1">#SBATCH -t 1-00:00:00</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+<span class="c1">## Unload all modules</span>
+module<span class="w"> </span>purge
+<span class="c1">## Loads module gaussian/09/pgi</span>
+module<span class="w"> </span>load<span class="w"> </span>gaussian/09/pgi
+
+<span class="c1">## Standard input file</span>
+<span class="nv">G09COM</span><span class="o">=</span>myfile.gjf
+<span class="c1">## Standard output file</span>
+<span class="nv">G09LOG</span><span class="o">=</span>myfile.log
+<span class="c1">## Standard check File</span>
+<span class="nv">G09CHK</span><span class="o">=</span>myfile.chk
+
+hostname
+
+<span class="c1">## Set up the temporary directory in $SCRATCHDIR</span>
+<span class="nv">curdir</span><span class="o">=</span><span class="nv">$PWD</span>
+<span class="nv">tmpdir</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/<span class="nv">$$</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">tmpdir</span><span class="si">}</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">tmpdir</span><span class="si">}</span>
+
+<span class="c1">## Run the program with the working directory</span>
+g09<span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$curdir</span>/<span class="si">${</span><span class="nv">G09GJF</span><span class="si">}</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$curdir</span>/<span class="si">${</span><span class="nv">G09LOG</span><span class="si">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">$G09CHK</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span>mv<span class="w"> </span><span class="nv">$G09CHK</span><span class="w"> </span><span class="nv">$curdir</span>/
+<span class="k">fi</span>
+</code></pre></div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
