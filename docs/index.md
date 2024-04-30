@@ -1,6 +1,4 @@
 # Bienvenue sur la documentation d'EXPLOR.
-#To see the english version, [click here](http://explor-tech.univ-lorraine.fr/en/) 
-
 
 * [Ressources de calcul disponibles](materiel.md)
 * [Espaces de stockage](stockage.md) 
