@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Soumission de job - EXPLOR</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">EXPLOR</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Se connecter <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../console/" class="dropdown-item">En mode console</a>
+</li>
+                                    
+<li>
+    <a href="../graphique/" class="dropdown-item">En mode graphique</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../materiel/" class="nav-link">Ressources de calcul</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stockage/" class="nav-link">Espaces de stockage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../applications/" class="nav-link">Logiciels</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Exemple de scripts pour quelques programmes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Gaussian09_F/" class="dropdown-item">Gaussian 09</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../transfert/" class="nav-link">Transferts de données</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../module/" class="nav-link">Utilisation des modules</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Soumission de job</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bp/" class="nav-link">Bonnes pratiques</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Questions/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chartes/" class="nav-link">Charte d'utilisation du Mésocentre EXPLOR</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formulaires/" class="nav-link">Formulaires</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../module/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../bp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#slurm" class="nav-link">Slurm</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#les-partitions" class="nav-link">Les partitions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lister-les-jobs-soumis" class="nav-link">Lister les jobs soumis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#soumission-dun-job" class="nav-link">Soumission d'un job</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#annulation-dun-job" class="nav-link">Annulation d'un job</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#reservation-interactive-dun-nud-de-calcul-pour-compilationdebogage" class="nav-link">Réservation interactive d'un nœud de calcul (pour compilation/débogage)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="slurm">Slurm</h1>
+<p><a href="https://slurm.schedmd.com/">SLURM</a> est un job scheduler. Son rôle est de gérer la file d'attente et de lancer les calculs lorsque les ressources demandées sont disponibles.</p>
+<h2 id="les-partitions">Les partitions</h2>
+<p>Les différents nœuds de calcul sont regroupés selon des partitions. Lors de la soumission d'un job, il faut choisir une partition.</p>
+<p>Les partitions à disposition sont les suivantes :</p>
+<ul>
+<li>std : Les nœuds standard en réseau basse latence Intel Omnipath 100GB/s.</li>
+<li>hf  : Les nœuds hautes-fréquences en réseau 10GB/s.</li>
+<li>ivy : Les nœuds génération Ivy-Bridge en réseau Infiniband 40GB/s</li>
+<li>k20 : Les nœuds GPU Tesla K20m</li>
+</ul>
+<p>Pour lister les partitions tapez la commande <code>$ sinfo</code></p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">cal01@vm-support01 explor-support</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">sinfo</span>
+<span class="k">PARTITION</span><span class="w"> </span><span class="n">AVAIL</span><span class="w">    </span><span class="n">AVAIL_FEATURES</span><span class="w">   </span><span class="n">NODES</span><span class="w">   </span><span class="n">NODES</span><span class="p">(</span><span class="n">A</span><span class="o">/</span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="n">NODELIST</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">BROADWELL</span><span class="p">,</span><span class="n">INTEL</span><span class="p">,</span><span class="n">H</span><span class="w">      </span><span class="mi">16</span><span class="w">        </span><span class="mi">1</span><span class="o">/</span><span class="mi">15</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">16</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">01-16</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">SKYLAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">INTEL</span><span class="w">       </span><span class="mi">8</span><span class="w">          </span><span class="mi">1</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">8</span><span class="w"> </span><span class="n">cnf</span><span class="o">[</span><span class="n">01-08</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">I</span><span class="w">       </span><span class="mi">2</span><span class="w">          </span><span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">cnh</span><span class="o">[</span><span class="n">01-02</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="ow">IN</span><span class="w">      </span><span class="mi">28</span><span class="w">        </span><span class="mi">5</span><span class="o">/</span><span class="mi">23</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">28</span><span class="w"> </span><span class="n">cni</span><span class="o">[</span><span class="n">01-24,29-32</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="ow">IN</span><span class="w">       </span><span class="mi">8</span><span class="w">          </span><span class="mi">0</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">8</span><span class="w"> </span><span class="n">cnk</span><span class="o">[</span><span class="n">01-08</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w">      </span><span class="n">EPYC4</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="n">AMD</span><span class="w">       </span><span class="mi">2</span><span class="w">          </span><span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">cnl</span><span class="o">[</span><span class="n">02-03</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">SKYLAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">INTEL</span><span class="w">      </span><span class="mi">48</span><span class="w">       </span><span class="mi">31</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">48</span><span class="w"> </span><span class="n">cnc</span><span class="o">[</span><span class="n">01-48</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">SKYLAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">INTEL</span><span class="w">      </span><span class="mi">12</span><span class="w">         </span><span class="mi">3</span><span class="o">/</span><span class="mi">9</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">12</span><span class="w"> </span><span class="n">cnc</span><span class="o">[</span><span class="n">53-64</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">IVY</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="n">INTEL</span><span class="p">,</span><span class="n">NOPR</span><span class="w">      </span><span class="mi">12</span><span class="w">         </span><span class="mi">8</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">12</span><span class="w"> </span><span class="n">cnd</span><span class="o">[</span><span class="n">01-12</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">I</span><span class="w">      </span><span class="mi">12</span><span class="w">        </span><span class="mi">2</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">12</span><span class="w"> </span><span class="n">cng</span><span class="o">[</span><span class="n">01-12</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="ow">IN</span><span class="w">       </span><span class="mi">4</span><span class="w">          </span><span class="mi">3</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="n">cni</span><span class="o">[</span><span class="n">25-28</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">EPYC3</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="n">AMD</span><span class="p">,</span><span class="n">NOPR</span><span class="w">      </span><span class="mi">64</span><span class="w">       </span><span class="mi">47</span><span class="o">/</span><span class="mi">17</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">64</span><span class="w"> </span><span class="n">cnj</span><span class="o">[</span><span class="n">01-64</span><span class="o">]</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">EPYC4</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="n">AMD</span><span class="p">,</span><span class="n">NOPR</span><span class="w">       </span><span class="mi">1</span><span class="w">          </span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="n">cnl01</span>
+<span class="n">std</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">BROADWELL</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="nc">INT</span><span class="w">     </span><span class="mi">121</span><span class="w">     </span><span class="mi">107</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">121</span><span class="w"> </span><span class="n">cna</span><span class="o">[</span><span class="n">02-17,19-39,41-64</span><span class="o">]</span><span class="p">,</span><span class="n">cnb</span><span class="o">[</span><span class="n">01-08,10-12,14-52,54-55,57-64</span><span class="o">]</span>
+<span class="n">gpu</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">IB</span><span class="p">,</span><span class="n">RT</span><span class="w">       </span><span class="mi">2</span><span class="w">          </span><span class="mi">1</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">gpe</span><span class="o">[</span><span class="n">01-02</span><span class="o">]</span>
+<span class="n">gpu</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">L40</span><span class="p">,</span><span class="n">I</span><span class="w">       </span><span class="mi">1</span><span class="w">          </span><span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="n">gpf01</span>
+<span class="n">gpu</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">BROADWELL</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">P10</span><span class="w">       </span><span class="mi">6</span><span class="w">          </span><span class="mi">6</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">6</span><span class="w"> </span><span class="n">gpb</span><span class="o">[</span><span class="n">01-06</span><span class="o">]</span>
+<span class="n">gpu</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">BROADWELL</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">GTX</span><span class="w">       </span><span class="mi">4</span><span class="w">          </span><span class="mi">3</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="n">gpc</span><span class="o">[</span><span class="n">01-04</span><span class="o">]</span>
+<span class="n">gpu</span><span class="w">          </span><span class="n">up</span><span class="w"> </span><span class="n">CASCADELAKE</span><span class="p">,</span><span class="n">OPA</span><span class="p">,</span><span class="n">T</span><span class="w">       </span><span class="mi">3</span><span class="w">          </span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">3</span><span class="w"> </span><span class="n">gpd</span><span class="o">[</span><span class="n">01-03</span><span class="o">]</span>
+<span class="p">(</span><span class="n">A</span><span class="o">/</span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="p">(</span><span class="n">allocated</span><span class="o">/</span><span class="n">idle</span><span class="o">/</span><span class="n">other</span><span class="o">/</span><span class="n">total</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="lister-les-jobs-soumis">Lister les jobs soumis</h2>
+<p>Pour lister les jobs soumis taper la commande <code>$ squeue</code></p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">dpena@vm-gce17 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">squeue</span><span class="w"> </span>
+<span class="w">             </span><span class="n">JOBID</span><span class="w"> </span><span class="k">PARTITION</span><span class="w">     </span><span class="n">NAME</span><span class="w">     </span><span class="k">USER</span><span class="w"> </span><span class="n">ST</span><span class="w">       </span><span class="nc">TIME</span><span class="w">  </span><span class="n">NODES</span><span class="w"> </span><span class="n">NODELIST</span><span class="p">(</span><span class="n">REASON</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5220</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Resources</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5221</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5222</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5223</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5224</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5225</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5226</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5227</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5228</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5229</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5230</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5231</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w"> </span><span class="n">PD</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">00</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">Priority</span><span class="p">)</span>
+<span class="w">              </span><span class="mi">5212</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">06</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">01-02</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5213</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">06</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">03-04</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5214</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">05</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">05-06</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5215</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">03</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">07-08</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5216</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">03</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">09-10</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5217</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">03</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">11-12</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5218</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">03</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">13-14</span><span class="o">]</span>
+<span class="w">              </span><span class="mi">5219</span><span class="w">        </span><span class="n">hf</span><span class="w"> </span><span class="n">PingPong</span><span class="w">    </span><span class="n">dpena</span><span class="w">  </span><span class="n">R</span><span class="w">       </span><span class="mi">0</span><span class="err">:</span><span class="mi">03</span><span class="w">      </span><span class="mi">2</span><span class="w"> </span><span class="n">cne</span><span class="o">[</span><span class="n">15-16</span><span class="o">]</span>
+</code></pre></div>
+
+<p>en mode graphique, vous pouvez également taper la commande <code>$ sview</code>.</p>
+<h2 id="soumission-dun-job">Soumission d'un job</h2>
+<p>Pour soumettre un job lancer la commande :</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sbatch<span class="w"> </span>script.slurm
+</code></pre></div>
+
+<div class="admonition note">
+<p>Avant de soumettre un job vous devez au préalable charger les modules nécessaires.</p>
+</div>
+<p>Quelques exemples de scripts de soumission :</p>
+<h3 id="exemple-calcul-de-3-jours-mono-processeur">Exemple : calcul de 3 jours  mono-processeur</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">## Partition</span>
+<span class="c1">#SBATCH -p std</span>
+<span class="c1">## Nombre de noeuds</span>
+<span class="c1">#SBATCH -N 1  </span>
+<span class="c1">## Nom du job</span>
+<span class="c1">#SBATCH -J mono-proc</span>
+<span class="c1">## Nombre de taches demandés</span>
+<span class="c1">#SBATCH -n 1</span>
+<span class="c1">#SBATCH -t 3-00:00:00</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>gcc/7.1.0
+
+<span class="c1">## Creating temporary directory in $SCRATCHDIR</span>
+<span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/job.<span class="nv">$SLURM_JOB_ID</span>.<span class="nv">$USER</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Copying files to $WORKDIR </span>
+cp<span class="w"> </span>-rf<span class="w"> </span>input<span class="w"> </span>executable<span class="w">  </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Moving to $WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="c1">## Calculation</span>
+srun<span class="w"> </span>executable<span class="w"> </span>&lt;<span class="w"> </span>input
+
+<span class="c1">## Copying back files to submit directory</span>
+cp<span class="w"> </span>-rf<span class="w"> </span>*<span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>/.
+</code></pre></div>
+
+<h3 id="exemple-calcul-de-8-jours-et-30-min-avec-openmp-sur-8-curs">Exemple : calcul de 8 jours et 30 min avec OpenMP sur 8 cœurs</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -N 1  </span>
+<span class="c1">#SBATCH -p std</span>
+<span class="c1">#SBATCH -J openmp</span>
+<span class="c1">## Nombre de cpu par tache</span>
+<span class="c1">#SBATCH -c 8</span>
+<span class="c1">#SBATCH -t 8-00:30:00</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>intel/2018.0.128<span class="w"> </span>mkl/2018.0.128
+
+
+<span class="c1">## Creating temporary directory in $SCRATCHDIR</span>
+<span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/job.<span class="nv">$SLURM_JOB_ID</span>.<span class="nv">$USER</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Copying files to $WORKDIR </span>
+cp<span class="w"> </span>-rf<span class="w"> </span>input<span class="w"> </span>executable<span class="w">  </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Moving to $WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="c1">## Calculation</span>
+srun<span class="w"> </span>executable<span class="w"> </span>&lt;<span class="w"> </span>input
+
+<span class="c1">## Copying back files to submit directory</span>
+cp<span class="w"> </span>-rf<span class="w"> </span>*<span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>/.
+</code></pre></div>
+
+<h3 id="exemple-calcul-de-15-jours-et-3-heures-avec-mpi-sur-2-nuds-32-curs-chacun-sur-nuds-std">Exemple : calcul de 15 jours et 3 heures avec MPI sur 2 nœuds, 32 cœurs chacun sur nœuds std</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#SBATCH -N 2  </span>
+<span class="c1">#SBATCH -p std</span>
+<span class="c1">#SBATCH -J mpi</span>
+<span class="c1">## Nombre de taches demandés</span>
+<span class="c1">#SBATCH -n 64 </span>
+<span class="c1">## Nombre de taches demandés par nœud</span>
+<span class="c1">#SBATCH --ntasks-per-node=32</span>
+<span class="c1">#SBATCH -t 15-03</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>intel/2018.0.128<span class="w">  </span>intelmpi/2018.0.128<span class="w"> </span>mkl/2018.0.128
+
+<span class="c1">## Creating temporary directory in $SCRATCHDIR</span>
+<span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/job.<span class="nv">$SLURM_JOB_ID</span>.<span class="nv">$USER</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Copying files to $WORKDIR </span>
+cp<span class="w"> </span>-rf<span class="w"> </span>input<span class="w"> </span>executable<span class="w">  </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Moving to $WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="c1">## Calculation</span>
+srun<span class="w"> </span>executable<span class="w"> </span>&lt;<span class="w"> </span>input
+
+<span class="c1">## Copying back files to submit directory</span>
+cp<span class="w"> </span>-rf<span class="w"> </span>*<span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>/.
+</code></pre></div>
+
+<h3 id="exemple-calcul-de-30min-openmp-mpi-sur-2x32-curs-sur-un-nud-std">Exemple : Calcul de 30min OpenMP + MPI sur 2x32 cœurs sur un nœud std</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -N 2  </span>
+<span class="c1">#SBATCH -p std</span>
+<span class="c1">#SBATCH -J openmp</span>
+<span class="c1">#SBATCH --ntasks-per-node=1</span>
+<span class="c1">#SBATCH -c 32</span>
+<span class="c1">#SBATCH -t 30:00</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>intel/2018.0.128<span class="w">  </span>intelmpi/2018.0.128<span class="w"> </span>mkl/2018.0.128
+<span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$SLURM_CPUS_PER_TASK</span>
+
+<span class="c1">## Creating temporary directory in $SCRATCHDIR</span>
+<span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/job.<span class="nv">$SLURM_JOB_ID</span>.<span class="nv">$USER</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Copying files to $WORKDIR </span>
+cp<span class="w"> </span>-rf<span class="w"> </span>input<span class="w"> </span>executable<span class="w">  </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Moving to $WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="c1">## Calculation</span>
+srun<span class="w"> </span>executable<span class="w"> </span>&lt;<span class="w"> </span>input
+
+<span class="c1">## Copying back files to submit directory</span>
+cp<span class="w"> </span>-rf<span class="w"> </span>*<span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>/.
+</code></pre></div>
+
+<h3 id="exemple-calcul-de-30min-mpi-sur-8-curs-et-deux-gpu-sur-un-nud-gpu">Exemple : Calcul de 30min MPI sur 8 cœurs et deux GPU sur un nœud gpu</h3>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH -N 1  </span>
+<span class="c1">#SBATCH -p gpu</span>
+<span class="c1">#SBATCH -J mpi+gpu</span>
+<span class="c1">#SBATCH -n 8</span>
+<span class="c1">#SBATCH --gres=gpu:2</span>
+<span class="c1">#SBATCH -t 30:00</span>
+<span class="c1">#SBATCH --mail-type=ALL</span>
+<span class="c1">#SBATCH --mail-user=votremail@univ-lorraine.fr</span>
+
+module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>intel/2018.0.128<span class="w">  </span>intelmpi/2018.0.128<span class="w"> </span>mkl/2018.0.128<span class="w"> </span>cuda/8.0
+
+
+<span class="c1">## Creating temporary directory in $SCRATCHDIR</span>
+<span class="nv">WORKDIR</span><span class="o">=</span><span class="nv">$SCRATCHDIR</span>/job.<span class="nv">$SLURM_JOB_ID</span>.<span class="nv">$USER</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Copying files to $WORKDIR </span>
+cp<span class="w"> </span>-rf<span class="w"> </span>input<span class="w"> </span>executable<span class="w">  </span><span class="nv">$WORKDIR</span>
+
+<span class="c1">## Moving to $WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$WORKDIR</span>
+<span class="c1">## Calculation</span>
+srun<span class="w"> </span>executable<span class="w"> </span>&lt;<span class="w"> </span>input
+
+<span class="c1">## Copying back files to submit directory</span>
+cp<span class="w"> </span>-rf<span class="w"> </span>*<span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>/.
+</code></pre></div>
+
+<div class="admonition note">
+<p>Si vous souhaitez utiliser la commande mpirun à la place de srun avec le module intelmpi il est nécessaire de rajouter dans vos scripts de soumission la commande : unset I_MPI_PMI_LIBRARY</p>
+</div>
+<h2 id="annulation-dun-job">Annulation d'un job</h2>
+<p>Pour annuler un job soumis taper la commande <code>$ scancel #JOBID</code>, <code>#JOBID</code> étant le numéro du job.</p>
+<h2 id="reservation-interactive-dun-nud-de-calcul-pour-compilationdebogage">Réservation interactive d'un nœud de calcul (pour compilation/débogage)</h2>
+<p>Nous conseillons de compiler vos codes sources sur les nœud de calcul afin de profiter de l'ensemble des optimisations et d'éviter de surcharger la frontale. </p>
+<p>Pour cela vous avez la possibilité de réserver un nœud et de vous y connecter en mode interactif.</p>
+<p>Ex : pour demander un nœud de la partition std pendant 1 heure taper  :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">****@vm-gce17 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">salloc</span><span class="w"> </span><span class="o">-</span><span class="n">N1</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="n">std</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="mi">1</span><span class="err">:</span><span class="mi">00</span><span class="err">:</span><span class="mi">00</span><span class="w"> </span><span class="n">srun</span><span class="w"> </span><span class="c1">--pty bash</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="o">****</span><span class="nv">@cna01</span><span class="err">&#39;</span><span class="n">s</span><span class="w"> </span><span class="nl">password</span><span class="p">:</span><span class="w"> </span>
+<span class="k">Last</span><span class="w"> </span><span class="nl">login</span><span class="p">:</span><span class="w"> </span><span class="n">Fri</span><span class="w"> </span><span class="n">Apr</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">21</span><span class="err">:</span><span class="mi">10</span><span class="err">:</span><span class="mi">16</span><span class="w"> </span><span class="mi">2017</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">vm</span><span class="o">-</span><span class="n">gce17</span><span class="p">.</span><span class="n">prod</span><span class="p">.</span><span class="n">explor</span>
+<span class="o">[</span><span class="n">****@cna01 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span>
+</code></pre></div>
+
+<p>Pour quitter le mode interactif, taper la commande <code>$ exit</code> :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">****@cna01 ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">exit</span>
+<span class="n">logout</span>
+<span class="k">Connection</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">cna01</span><span class="w"> </span><span class="n">closed</span><span class="p">.</span>
+<span class="nl">salloc</span><span class="p">:</span><span class="w"> </span><span class="n">Job</span><span class="w"> </span><span class="n">allocation</span><span class="w"> </span><span class="mi">5232</span><span class="w"> </span><span class="n">has</span><span class="w"> </span><span class="n">been</span><span class="w"> </span><span class="n">revoked</span><span class="p">.</span>
+</code></pre></div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

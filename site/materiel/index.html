@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Ressources de calcul - EXPLOR</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">EXPLOR</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Se connecter <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../console/" class="dropdown-item">En mode console</a>
+</li>
+                                    
+<li>
+    <a href="../graphique/" class="dropdown-item">En mode graphique</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Ressources de calcul</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stockage/" class="nav-link">Espaces de stockage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../applications/" class="nav-link">Logiciels</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Exemple de scripts pour quelques programmes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Gaussian09_F/" class="dropdown-item">Gaussian 09</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../transfert/" class="nav-link">Transferts de données</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../module/" class="nav-link">Utilisation des modules</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../slurm/" class="nav-link">Soumission de job</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bp/" class="nav-link">Bonnes pratiques</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Questions/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chartes/" class="nav-link">Charte d'utilisation du Mésocentre EXPLOR</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formulaires/" class="nav-link">Formulaires</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../graphique/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../stockage/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#ressources-de-calcul" class="nav-link">Ressources de calcul</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#description-des-ressources-de-calcul-disponibles" class="nav-link">Description des ressources de calcul disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#limitations-en-duree-et-en-ressources-dun-job" class="nav-link">Limitations en durée et en ressources d'un job</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#limitations-en-ressources-dun-utilisateur" class="nav-link">Limitations en ressources d'un utilisateur</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ressources-de-calcul">Ressources de calcul</h1>
+<h2 id="description-des-ressources-de-calcul-disponibles">Description des ressources de calcul disponibles</h2>
+<h3 id="materiel-explor">Matériel EXPLOR</h3>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Matériel</th>
+<th>CPU</th>
+<th>GPU</th>
+<th># de nœud</th>
+<th># de cœurs / nœud</th>
+<th># de cœurs total</th>
+<th>Mémoire dispo / nœud</th>
+<th>Mémoire par défaut / cœur</th>
+<th>Réseau</th>
+<th>Mode Exclusif</th>
+<th>Tflops Total (DP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>std</strong></td>
+<td>DELL C6320</td>
+<td><a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683v4 2.1 GHz, AVX2</a></td>
+<td>n/a</td>
+<td>128</td>
+<td>32</td>
+<td>4096</td>
+<td>120GB</td>
+<td>3750MB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Oui</td>
+<td>137.6</td>
+</tr>
+<tr>
+<td><strong>sky</strong></td>
+<td>DELL C6420</td>
+<td><a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor 2.1 Ghz, AVX512</a></td>
+<td>n/a</td>
+<td>48</td>
+<td>32</td>
+<td>1536</td>
+<td>180GB</td>
+<td>5625MB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Oui</td>
+<td>63.9</td>
+</tr>
+<tr>
+<td><strong>hf</strong></td>
+<td>DELL R630</td>
+<td><a href="http://ark.intel.com/fr/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">Intel Xeon E5-2637v4 3.5 GHz, AVX2</a></td>
+<td>n/a</td>
+<td>16</td>
+<td>8</td>
+<td>128</td>
+<td>120GB</td>
+<td>15000MB</td>
+<td>Ethernet 10Gb/s</td>
+<td>Non</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td><strong>ivy</strong></td>
+<td>DELL C6220</td>
+<td><a href="https://ark.intel.com/fr/products/75267/Intel-Xeon-Processor-E5-2640-v2-20M-Cache-2_00-GHz">Intel Xeon E5-2640v2 2.0 GHz, AVX</a></td>
+<td>n/a</td>
+<td>12</td>
+<td>16</td>
+<td>196</td>
+<td>60GB</td>
+<td>3750MB</td>
+<td>Infiniband 40Gb/s</td>
+<td>Oui</td>
+<td>3.1</td>
+</tr>
+<tr>
+<td><strong>P100</strong></td>
+<td>DELL C4130</td>
+<td><a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683v4 2.1 GHz, AVX</a></td>
+<td><a href="https://www.techpowerup.com/gpudb/2888/tesla-p100-pcie-16-gb">NVIDIA Tesla P100</a></td>
+<td>6 <br> 4xGPU/nœud</td>
+<td>32</td>
+<td>192</td>
+<td>120GB</td>
+<td>3750MB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>119.3</td>
+</tr>
+<tr>
+<td><strong>GTX</strong></td>
+<td>DELL T630</td>
+<td><a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683v4 2.1 GHz, AVX</a></td>
+<td><a href="https://www.techpowerup.com/gpudb/2877/geforce-gtx-1080-ti">GEFORCE GTX 1080 Ti</a></td>
+<td>4 <br> 2xGPU/nœud</td>
+<td>32</td>
+<td>128</td>
+<td>120GB</td>
+<td>3750MB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>6.9</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Processeurs Intel Skylake (6ème génération) :</strong></p>
+<p>La partition "skylake" (<strong>sky</strong>) comprend 48 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Skylake <a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 192 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
+<div class="admonition note">
+<p>La seule véritable différence entre les processeurs Skylake (6ème génération) et Broadwell (5ème génération) est que les premiers possèdent des instructions de calcul plus efficaces.
+Donc ils sont capables de générer plus d'opérations par secondes (flops) que les Broadwell a une seule condition de recompiler les programmes avec les bonnes options pour permettre d'utiliser ces nouveaux registres (AVX512).</p>
+</div>
+<p><strong>Processeurs Intel Broadwell (5ème génération) :</strong></p>
+<p>La partition "standard" (<strong>std</strong>)  comprend 128 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 128 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
+<p>La partition  "haute-fréquence" (<strong>hf</strong>) comprend 16 nœuds connectés en réseau 10Gb ethernet, chaque nœud disposant de deux processeurs <a href="http://ark.intel.com/fr/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">Intel Xeon E5-2637 v4</a> chacun comprenant 4 cœurs cadencés à 3.5Ghz et 128 Go de RAM. Elle est adaptée aux applications sérielles ou faiblement parallélisées.</p>
+<p>La partition <strong>p100</strong> comprend 6 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 4 cartes <a href="https://www.techpowerup.com/gpudb/2888/tesla-p100-pcie-16-gb">NVIDIA Tesla P100</a>.</p>
+<p>La partition <strong>GTX</strong> comprend 4 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-26833
+-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 2 cartes <a href="https://www.techpowerup.com/gpudb/288
+77/geforce-gtx-1080-ti">GEFORCE GTX 1080 Ti</a></p>
+<p><strong>Processeurs Intel de Ivy Bridge (3ème génération) :</strong></p>
+<p>La partition <strong>ivy</strong> comprend 12 nœuds connectés en réseau Infiniband 40Gb à basse-latence, chaque nœud disposant de deux processeurs <a href="https://ark.intel.com/fr/products/75267/Intel-Xeon-Processor-E5-2640-v2-20M-Cache-2_00-GHz">Intel Xeon E5-2640v2 2.0 GHz</a> chacun comprenant 8 cœurs cadencés à 2.0 Ghz et 64 Go de RAM. Elle est adaptée aux applications parallèles.</p>
+<h3 id="materiel-heberge">Matériel Hébergé</h3>
+<p>Le mésocentre a également vocation a héberger du matériel. Contactez-nous  <a href="mailto:explor-contact@univ-lorraine.fr">explor-contact@univ-lorraine.fr</a> pour toute demande d'informations complémentaires concernant l'hébergement de matériel.</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th>Matériel</th>
+<th>CPU</th>
+<th>GPU</th>
+<th># de nœud</th>
+<th># de cœurs / nœud</th>
+<th># de cœurs total</th>
+<th>Mémoire dispo / nœud</th>
+<th>Mémoire par défaut / cœur</th>
+<th>Réseau</th>
+<th>Mode Exclusif</th>
+<th>Tflops Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>mysky</strong></td>
+<td>DELL C6420</td>
+<td><a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor 2.1 Ghz, AVX512</a></td>
+<td>n/a</td>
+<td>16</td>
+<td>32</td>
+<td>512</td>
+<td>153.6GB</td>
+<td>4.80GB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>19.2</td>
+</tr>
+<tr>
+<td>-------------</td>
+<td>--------------</td>
+<td>-----</td>
+<td>-----</td>
+<td>-----------</td>
+<td>---------------------</td>
+<td>-----------------------</td>
+<td>-----------------------------</td>
+<td>---------------------------</td>
+<td>-----------------</td>
+<td>---------------</td>
+<td>--------------</td>
+</tr>
+<tr>
+<td><strong>myhf</strong></td>
+<td>DELL C6420</td>
+<td><a href="https://ark.intel.com/content/www/fr/fr/ark/products/120475/intel-xeon-gold-5122-processor-16-5m-cache-3-60-ghz.html">Intel Xeon Gold 5122 Processor 3.6 Ghz, AVX2</a></td>
+<td>n/a</td>
+<td>8</td>
+<td>8</td>
+<td>64</td>
+<td>96GB</td>
+<td>1.50GB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>11.3</td>
+</tr>
+<tr>
+<td>-------------</td>
+<td>--------------</td>
+<td>-----</td>
+<td>-----</td>
+<td>-----------</td>
+<td>---------------------</td>
+<td>-----------------------</td>
+<td>-----------------------------</td>
+<td>---------------------------</td>
+<td>-----------------</td>
+<td>---------------</td>
+<td>--------------</td>
+</tr>
+<tr>
+<td><strong>mycas</strong></td>
+<td>DELL C6820</td>
+<td><a href="https://ark.intel.com/content/www/fr/fr/ark/products/192445/intel-xeon-gold-5222-processor-16-5m-cache-3-80-ghz.html">Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz, AVX512</a></td>
+<td>n/a</td>
+<td>12</td>
+<td>40</td>
+<td>480</td>
+<td>180GB</td>
+<td>4.50GB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>80.6</td>
+</tr>
+<tr>
+<td>-------------</td>
+<td>--------------</td>
+<td>-----</td>
+<td>-----</td>
+<td>-----------</td>
+<td>---------------------</td>
+<td>-----------------------</td>
+<td>-----------------------------</td>
+<td>---------------------------</td>
+<td>-----------------</td>
+<td>---------------</td>
+<td>--------------</td>
+</tr>
+<tr>
+<td><strong>mylhf</strong></td>
+<td>DELL R640</td>
+<td><a href="https://ark.intel.com/content/www/fr/fr/ark/products/192445/intel-xeon-gold-5222-processor-16-5m-cache-3-80-ghz.html">Intel Xeon Gold 5222 Processor 3.8 Ghz, AVX512</a></td>
+<td>n/a</td>
+<td>2</td>
+<td>8</td>
+<td>16</td>
+<td>7465GB</td>
+<td>93.25GB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>myt4</strong></td>
+<td>DELL R740</td>
+<td><a href="https://ark.intel.com/content/www/fr/fr/ark/products/120483/intel-xeon-gold-6126-processor-19-25m-cache-2-60-ghz.html">Intel(R) Xeon(R) Gold 6126 CPU @ 2.60GHz, AVX</a></td>
+<td><a href="https://www.techpowerup.com/gpu-specs/tesla-t4.c3316">TESLA T4</a></td>
+<td>3 <br> 3xGPU/nœud</td>
+<td>32</td>
+<td>96</td>
+<td>84GB</td>
+<td>3500MB</td>
+<td>Omnipath 100Gb/s</td>
+<td>Non</td>
+<td>11.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limitations-en-duree-et-en-ressources-dun-job">Limitations en durée et en ressources d'un job</h2>
+<p>Les limitations suivantes en terme de ressources et de durées sont appliquées au mésocentre pour chaque job soumis :</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th># Max de Nœuds / job</th>
+<th># Max de Cœurs / job</th>
+<th>Durée Maximale /job (jours)</th>
+<th># Max de GPU / job</th>
+<th># Max de jobs actifs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>std</strong></td>
+<td>1 <br> 2 <br> 4 <br> 8 <br> 16 <br> 32</td>
+<td>32 <br> 64 <br> 128 <br> 256 <br> 512 <br> 1024</td>
+<td>16 <br> 16 <br> 8 <br> 4 <br> 4 <br> 2</td>
+<td>- <br> - <br> - <br> - <br> - <br> -</td>
+<td>32 <br> 16 <br> 16 <br> 8 <br> 4 <br> 2</td>
+</tr>
+<tr>
+<td><strong>hf</strong></td>
+<td>1</td>
+<td>8</td>
+<td>16</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>ivy</strong></td>
+<td>12</td>
+<td>192</td>
+<td>16</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>sky</strong></td>
+<td>1 <br> 2 <br> 4 <br> 8 <br> 16</td>
+<td>32 <br> 64 <br> 128 <br> 256 <br> 512</td>
+<td>16 <br> 16 <br> 8 <br> 4 <br> 4</td>
+<td>-</td>
+<td>16 <br> 8 <br> 8 <br> 4 <br> 2</td>
+</tr>
+<tr>
+<td><strong>p100</strong></td>
+<td>1 <br> 2 <br> 3</td>
+<td>32 <br> 64 <br> 96</td>
+<td>16 <br> 8 <br> 4</td>
+<td>4 <br> 8 <br> 12</td>
+<td>- <br> - <br> -</td>
+</tr>
+<tr>
+<td><strong>GTX</strong></td>
+<td>1 <br> 2</td>
+<td>32 <br> 64</td>
+<td>16 <br> 8</td>
+<td>2 <br> 4</td>
+<td>- <br> -</td>
+</tr>
+</tbody>
+</table>
+<h2 id="limitations-en-ressources-dun-utilisateur">Limitations en ressources d'un utilisateur</h2>
+<p>Les limitations suivantes en terme de ressources (Nœuds, CPU, GPU)  pour chaque utilisateur :</p>
+<table>
+<thead>
+<tr>
+<th>Partition</th>
+<th># Max de Nœuds / utilisateur</th>
+<th># Max de CPU / utilisateur</th>
+<th># Max de GPU / utilisateur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>std</strong></td>
+<td>32</td>
+<td>1024</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>hf</strong></td>
+<td>-</td>
+<td>64</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>ivy</strong></td>
+<td>12</td>
+<td>192</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>sky</strong></td>
+<td>24</td>
+<td>768</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>p100</strong></td>
+<td>-</td>
+<td>96</td>
+<td>12</td>
+</tr>
+<tr>
+<td><strong>GTX</strong></td>
+<td>-</td>
+<td>64</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p>La soumission du job sera refusée si la durée maximale n'est pas spécifiée ou si les ressources demandées dépassent les limitations ci-dessus.</p>
+</div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

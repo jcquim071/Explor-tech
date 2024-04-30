@@ -1,0 +1,83 @@
+\documentclass[
+    a4paper, 
+    12pt, onecolumn,
+    %draft
+]{article}
+
+%%% Pour un texte en francais
+\usepackage[francais]{babel}
+%\usepackage[latin1]{inputenc}	         % encodage des lettres accentuees
+\usepackage[utf8]{inputenc}          % encodage des lettres accentuees
+%\usepackage{graphicx}
+\usepackage{graphicx} \def\BIB{}
+
+\usepackage{mathptmx}
+
+
+
+%%% Quelques raccourcis pour la mise en page
+\newcommand{\remarque}[1]{{\small \it #1}}
+\newcommand{\rubrique}{\bigskip \noindent $\bullet$ }
+
+\begin{document}
+
+\noindent EXPLOR \hfill \textsc{Demande d'Attribution de Ressources Informatiques}
+
+\begin{center}
+\Large  \bf
+Description scientifique du projet
+\end{center}
+\bigskip
+
+\rubrique  Titre du projet:  
+\hfill
+%%% METTRE ICI LE RENSEIGNEMENT DEMANDE
+[TITRE DU PROJET]
+
+
+
+\rubrique  Num\'ero du projet EXPLOR
+\footnote{ Uniquement en cas de demande de prolongation d'un projet
+  existant.} : 
+\hfill
+%%% METTRE ICI LE RENSEIGNEMENTS DEMANDE
+[Num\'ero de projet]
+
+\rubrique  Responsable scientifique
+\footnote{ Le responsable se charge du suivi du projet et fournit un bilan
+  en fin d'ann\'ee.} :  
+\hfill
+%%% METTRE ICI LES RENSEIGNEMENTS DEMANDES
+[NOM Pr\'enom] 
+
+
+\rubrique Laboratoire:  
+\hfill
+%%% METTRE ICI LES RENSEIGNEMENTS DEMANDES
+[Universit\'e ou Institution - Nom du labo] 
+
+
+%\newpage
+\section{Contexte scientifique et objectifs du projet}
+
+%%% A COMMMENTER LORS DE LA REDACTION DU PROJET
+\emph{Longueur typique {\bf 1 page}, longueur maximale de {\bf 2 pages}. Si le projet se d\'ecompose en sous-projets, {\bf 1 page additionnelle maximum par sous-projet}.}
+\vskip 0.2cm  
+
+\section{M\'ethode numérique \& logiciel(s) employé(s)}
+
+\emph{Longueur typique de  {\bf 0.5 page}, longueur maximale de {\bf 2 pages}.
+La justification d'un accès aux ressources informatiques d'EXPLOR doit être argumentée.}
+
+
+%\newpage
+\section{Bibliographie}
+\label{Sec:Biblio}
+\emph{Bibliographie de l'équipe sur le projet}
+
+\bibliographystyle{plain}
+\bibliography{mybiblio}
+
+\end{document}
+%%%%%%%%%%%%%%%%%  Fin du fichier Latex  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

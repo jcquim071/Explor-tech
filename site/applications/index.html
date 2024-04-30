@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Logiciels - EXPLOR</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">EXPLOR</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Se connecter <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../console/" class="dropdown-item">En mode console</a>
+</li>
+                                    
+<li>
+    <a href="../graphique/" class="dropdown-item">En mode graphique</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../materiel/" class="nav-link">Ressources de calcul</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stockage/" class="nav-link">Espaces de stockage</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Logiciels</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Exemple de scripts pour quelques programmes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Gaussian09_F/" class="dropdown-item">Gaussian 09</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../transfert/" class="nav-link">Transferts de données</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../module/" class="nav-link">Utilisation des modules</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../slurm/" class="nav-link">Soumission de job</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bp/" class="nav-link">Bonnes pratiques</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Questions/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chartes/" class="nav-link">Charte d'utilisation du Mésocentre EXPLOR</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formulaires/" class="nav-link">Formulaires</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../stockage/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Gaussian09_F/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#compilateurs-disponibles" class="nav-link">Compilateurs disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#mpi-message-passing-interface-disponibles" class="nav-link">MPI (Message Passing Interface) disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#libraries-disponibles" class="nav-link">Libraries disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#applications-disponibles" class="nav-link">Applications disponibles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#applications-graphiques" class="nav-link">Applications graphiques</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#outils" class="nav-link">Outils</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="compilateurs-disponibles">Compilateurs disponibles</h1>
+<table>
+<thead>
+<tr>
+<th>Compilateurs</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intel Parallel Studio XE Cluster Edition</td>
+<td>2017 <br> 2018 <br> 2019</td>
+</tr>
+<tr>
+<td>PGI Community Edition</td>
+<td>2017</td>
+</tr>
+<tr>
+<td>GCC</td>
+<td>4.9.4 <br> 5.4.0 <br> 6.3.0 <br> 7.1.0 <br> 9.2.0 <br> 11.2 <br> 12.2 <br> 13.2</td>
+</tr>
+<tr>
+<td>Cuda</td>
+<td>6.5 <br> 7.0 <br> 7.5 <br> 8.0 <br> 9.0 <br> 9.1 <br> 9.2 <br>10.1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="mpi-message-passing-interface-disponibles">MPI (Message Passing Interface) disponibles</h1>
+<table>
+<thead>
+<tr>
+<th>MPI</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intelmpi</td>
+<td>2017 <br> 2018 <br> 2019</td>
+</tr>
+<tr>
+<td>Openmpi</td>
+<td>2.1.x <br> 3.0.x <br> 4.0.x</td>
+</tr>
+</tbody>
+</table>
+<h1 id="libraries-disponibles">Libraries disponibles</h1>
+<table>
+<thead>
+<tr>
+<th>MPI</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>atlas</td>
+<td>3.10.3</td>
+</tr>
+<tr>
+<td>boost</td>
+<td>1.64.0</td>
+</tr>
+<tr>
+<td>fftw</td>
+<td>3.3.7 <br> 3.3.8</td>
+</tr>
+<tr>
+<td>hdf5</td>
+<td>1.10.1</td>
+</tr>
+<tr>
+<td>hypre</td>
+<td>2.10.0b <br> 2.11.2</td>
+</tr>
+<tr>
+<td>metis</td>
+<td>4.0.3</td>
+</tr>
+<tr>
+<td>mkl</td>
+<td>2017 <br> 2018 <br> 2019</td>
+</tr>
+<tr>
+<td>nfft</td>
+<td>3.4.0</td>
+</tr>
+<tr>
+<td>plumed</td>
+<td>2.3.1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="applications-disponibles">Applications disponibles</h1>
+<table>
+<thead>
+<tr>
+<th>Applications</th>
+<th>Version</th>
+<th>GPU Compatible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abinit</td>
+<td>8.10.2 <br> 9.10.3</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td>Abaqus*</td>
+<td>2017</td>
+<td></td>
+</tr>
+<tr>
+<td>Amber*</td>
+<td>16 <br> 22</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td>Ansys Fluent*</td>
+<td>17.2 <br> 18.0</td>
+<td></td>
+</tr>
+<tr>
+<td>Caffe</td>
+<td>1.0 <br> 2.0</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td>CASTEP*</td>
+<td>16.1</td>
+<td></td>
+</tr>
+<tr>
+<td>Cp2k</td>
+<td>4.1 <br> 6.1</td>
+<td></td>
+</tr>
+<tr>
+<td>Crystal*</td>
+<td>14</td>
+<td></td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>65</td>
+<td></td>
+</tr>
+<tr>
+<td>Foam-extend</td>
+<td>4.0</td>
+<td></td>
+</tr>
+<tr>
+<td>FDS</td>
+<td>6.7.0</td>
+<td></td>
+</tr>
+<tr>
+<td>FEFF</td>
+<td>9.0</td>
+<td></td>
+</tr>
+<tr>
+<td>FreeFem++</td>
+<td>3.60 <br> 3.62 <br> 4.11 <br> 4.14</td>
+<td></td>
+</tr>
+<tr>
+<td>Gaussian*</td>
+<td>03 <br> 09</td>
+<td></td>
+</tr>
+<tr>
+<td>Gromacs</td>
+<td>2016.3 <br> 5.1.4 2022.3 2023.2</td>
+<td></td>
+</tr>
+<tr>
+<td>HyperWorks Solvers*</td>
+<td>2017.2.1</td>
+<td></td>
+</tr>
+<tr>
+<td>Lammps</td>
+<td>2017 <br> 2018 <br> 2020 <br> 2022</td>
+<td></td>
+</tr>
+<tr>
+<td>Matlab*</td>
+<td>r2017b <br> 2019b</td>
+<td></td>
+</tr>
+<tr>
+<td>Mothur</td>
+<td>1.40.5</td>
+<td></td>
+</tr>
+<tr>
+<td>OpenFOAM</td>
+<td>2.2.2 <br> 4.1 <br> 5.0 <br> 7.0</td>
+<td></td>
+</tr>
+<tr>
+<td>Pytorch</td>
+<td>1.0</td>
+<td>GPU</td>
+</tr>
+<tr>
+<td>Quantum Espresso*</td>
+<td>5.3.0 <br> 6.0 <br> 7.1 <br> 7.2</td>
+<td></td>
+</tr>
+<tr>
+<td>R</td>
+<td>3.5.2 <br> 4.1.3</td>
+<td></td>
+</tr>
+<tr>
+<td>Siesta</td>
+<td>4.0.1 <br> 4.1.5</td>
+<td></td>
+</tr>
+<tr>
+<td>TeraChem*</td>
+<td>1.9</td>
+<td></td>
+</tr>
+<tr>
+<td>Uspex</td>
+<td>9.4.4</td>
+<td></td>
+</tr>
+<tr>
+<td>VASP*</td>
+<td>5.4.1  <br> 5.4.4</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>*Une preuve d'achat de licence vous sera demandee pour pouvoir utiliser ces applications.</p>
+<h1 id="applications-graphiques">Applications graphiques</h1>
+<table>
+<thead>
+<tr>
+<th>Applications</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Avogadro</td>
+<td>1.90.0</td>
+</tr>
+<tr>
+<td>Ansys</td>
+<td>18.0</td>
+</tr>
+<tr>
+<td>GaussView</td>
+<td>5.0.9</td>
+</tr>
+<tr>
+<td>Gnuplot</td>
+<td>4.6</td>
+</tr>
+<tr>
+<td>Grace</td>
+<td></td>
+</tr>
+<tr>
+<td>Matlab</td>
+<td>r2017b <br> r2019b</td>
+</tr>
+<tr>
+<td>Paraview</td>
+<td>4.4.0  <br> 5.0.1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="outils">Outils</h1>
+<table>
+<thead>
+<tr>
+<th>Outils</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>advisor</td>
+<td>2018 <br> 2019</td>
+</tr>
+<tr>
+<td>anaconda</td>
+<td>2.5.1 <br> 3.5.1</td>
+</tr>
+<tr>
+<td>cmake</td>
+<td>3.10.2 <br> 3.15.5</td>
+</tr>
+<tr>
+<td>git</td>
+<td>2.15.1</td>
+</tr>
+<tr>
+<td>gmsh</td>
+<td>3.0.6</td>
+</tr>
+<tr>
+<td>idb</td>
+<td>2018</td>
+</tr>
+<tr>
+<td>inspector</td>
+<td>2018 <br> 2019</td>
+</tr>
+<tr>
+<td>libtool</td>
+<td>2.4.6</td>
+</tr>
+<tr>
+<td>paraview</td>
+<td>4.4.0 <br> 5.0.1</td>
+</tr>
+<tr>
+<td>python</td>
+<td>2.7 <br> 3.6</td>
+</tr>
+<tr>
+<td>tbb</td>
+<td>2018 <br> 2019</td>
+</tr>
+<tr>
+<td>vtune-amp</td>
+<td>2018 <br> 2019</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

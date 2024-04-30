@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Utilisation des modules - EXPLOR</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">EXPLOR</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Accueil</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Se connecter <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../console/" class="dropdown-item">En mode console</a>
+</li>
+                                    
+<li>
+    <a href="../graphique/" class="dropdown-item">En mode graphique</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../materiel/" class="nav-link">Ressources de calcul</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../stockage/" class="nav-link">Espaces de stockage</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../applications/" class="nav-link">Logiciels</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Exemple de scripts pour quelques programmes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Gaussian09_F/" class="dropdown-item">Gaussian 09</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../transfert/" class="nav-link">Transferts de données</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Utilisation des modules</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../slurm/" class="nav-link">Soumission de job</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../bp/" class="nav-link">Bonnes pratiques</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../Questions/" class="nav-link">FAQ</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../chartes/" class="nav-link">Charte d'utilisation du Mésocentre EXPLOR</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../formulaires/" class="nav-link">Formulaires</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../transfert/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../slurm/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#les-modules" class="nav-link">Les Modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#lister-les-modules-installes" class="nav-link">Lister les modules installés</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#operations-sur-les-modules" class="nav-link">Opérations sur les modules</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#charger-un-module" class="nav-link">Charger un module</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#decharger-un-module" class="nav-link">Décharger un module</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#decharger-tous-les-modules" class="nav-link">Décharger tous les modules</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#lister-les-modules-charges" class="nav-link">Lister les modules chargés</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="les-modules">Les Modules</h1>
+<p>Les modules sont des fichiers de configuration qui contiennent des instructions afin de modifier votre environnement logiciel. Un fichier module contient les informations nécessaires pour rendre disponible une application ou une bibliothèque dans la session de l'utilisateur.</p>
+<p>Les modules sont gérés par le logiciel <a href="https://www.tacc.utexas.edu/research-development/tacc-projects/lmod">Lmod 7.4</a>.</p>
+<h1 id="lister-les-modules-installes">Lister les modules installés</h1>
+<p>La commande <code>$ module available</code> ou  <code>$ module av</code> ou bien encore <code>$ ml av</code> liste les modules actuellement disponibles.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[</span><span class="c">dpena@vm</span><span class="nb">-</span><span class="c">gce17 gce17</span><span class="k">]</span><span class="c">$ module available</span>
+
+<span class="nb">---------------------------------------------</span><span class="c"> /opt/modulefiles/compilers </span><span class="nb">----------------------------------------------</span>
+<span class="c">   gcc/4</span><span class="nt">.</span><span class="c">9</span><span class="nt">.</span><span class="c">4 (D)    gcc/5</span><span class="nt">.</span><span class="c">4</span><span class="nt">.</span><span class="c">0    gcc/6</span><span class="nt">.</span><span class="c">3</span><span class="nt">.</span><span class="c">0    intel/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">132    pgi/16</span><span class="nt">.</span><span class="c">10</span>
+
+<span class="nb">------------------------------------------------</span><span class="c"> /opt/modulefiles/mpi </span><span class="nb">-------------------------------------------------</span>
+<span class="c">   intelmpi/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">132    openmpi/2</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">0/gcc</span><span class="nb">-</span><span class="c">4</span><span class="nt">.</span><span class="c">9</span><span class="nt">.</span><span class="c">4 (D)    openmpi/2</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">0/intel17    openmpi/2</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">0/pgi</span><span class="nb">-</span><span class="c">16</span>
+
+<span class="nb">---------------------------------------------</span><span class="c"> /opt/modulefiles/libraries </span><span class="nb">----------------------------------------------</span>
+<span class="c">   hypre/2</span><span class="nt">.</span><span class="c">10</span><span class="nt">.</span><span class="c">0b    metis/4</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">3    mkl/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">132</span>
+
+<span class="nb">------------------------------------------------</span><span class="c"> /opt/modulefiles/apps </span><span class="nb">------------------------------------------------</span>
+<span class="c">   quantum</span><span class="nb">-</span><span class="c">espresso/5</span><span class="nt">.</span><span class="c">3</span><span class="nt">.</span><span class="c">0/intel17    quantum</span><span class="nb">-</span><span class="c">espresso/6</span><span class="nt">.</span><span class="c">0/intel17    vasp/5</span><span class="nt">.</span><span class="c">4</span><span class="nt">.</span><span class="c">1/intel17</span>
+
+<span class="nb">-----------------------------------------------</span><span class="c"> /opt/modulefiles/tools </span><span class="nb">------------------------------------------------</span>
+<span class="c">   advisor/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">486553    idb/2017    inspector/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">484836    vtune</span><span class="nb">-</span><span class="c">amp/2017</span><span class="nt">.</span><span class="c">1</span><span class="nt">.</span><span class="c">0</span><span class="nt">.</span><span class="c">486011</span>
+
+<span class="c">  Où:</span>
+<span class="c">   D:  Default Module</span>
+
+<span class="c">Utilisez &quot;module spider&quot; pour trouver tous les modules possibles</span><span class="nt">.</span>
+<span class="c">Utilisez &quot;module keyword key1 key2 </span><span class="nt">...</span><span class="c">&quot; pour chercher tous les modules possibles qui correspondent à l&#39;une des clés</span>
+<span class="c">(key1</span><span class="nt">,</span><span class="c"> key2)</span><span class="nt">.</span>
+</code></pre></div>
+
+<h1 id="operations-sur-les-modules">Opérations sur les modules</h1>
+<h2 id="charger-un-module">Charger un module</h2>
+<p>Pour charger un module, par exemple le compilateur gcc dans sa version 6.9.3 il suffit de lancer la commande :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">gcc</span><span class="o">/</span><span class="mf">6.3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre></div>
+
+<p>Pour charger le compilateur intel, les librairies MPI intel et mkl lancer la commande :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="nb">load</span><span class="w"> </span><span class="n">intel</span><span class="w"> </span><span class="n">intelmpi</span><span class="w"> </span><span class="n">mkl</span>
+</code></pre></div>
+
+<div class="admonition note">
+<p>Vous pouvez rajouter une commande module load  dans votre <code>~/.bashrc</code>. Les modules seront alors automatiquement chargés à votre connexion.</p>
+</div>
+<h2 id="decharger-un-module">Décharger un module</h2>
+<p>Pour enlever un module de votre environnement, par exemple le module <code>gcc/6.3.0</code> lancer la commande :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">$</span><span class="w"> </span><span class="n">module</span><span class="w"> </span><span class="n">unload</span><span class="w"> </span><span class="n">gcc</span><span class="o">/</span><span class="mf">6.3</span><span class="o">.</span><span class="mi">0</span>
+</code></pre></div>
+
+<h2 id="decharger-tous-les-modules">Décharger tous les modules</h2>
+<p>Pour décharger tous les modules de votre environnement lancer la commande :</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>purge
+</code></pre></div>
+
+<h2 id="lister-les-modules-charges">Lister les modules chargés</h2>
+<p>Pour lister les modules actuellement chargés lancer la commande <code>$ module list</code> :</p>
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">dpena@vm-gce17 gce17</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="k">module</span><span class="w"> </span><span class="n">list</span>
+
+<span class="n">Currently</span><span class="w"> </span><span class="n">Loaded</span><span class="w"> </span><span class="nl">Modules</span><span class="p">:</span>
+<span class="w">  </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">intel</span><span class="o">/</span><span class="mf">2017.1.132</span><span class="w">      </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="n">mkl</span><span class="o">/</span><span class="mf">2017.1.132</span><span class="w">   </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="n">hypre</span><span class="o">/</span><span class="mf">2.10.0</span><span class="n">b</span>
+<span class="w">  </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">intelmpi</span><span class="o">/</span><span class="mf">2017.1.132</span><span class="w">   </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="n">metis</span><span class="o">/</span><span class="mf">4.0.3</span><span class="w">      </span><span class="mi">6</span><span class="p">)</span><span class="w"> </span><span class="n">advisor</span><span class="o">/</span><span class="mf">2017.1.1.486553</span>
+</code></pre></div></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

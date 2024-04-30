@@ -1,0 +1,56 @@
+site_name: EXPLOR
+nav:
+- Accueil: index.md
+- Se connecter: 
+  - En mode console: console.md
+  - En mode graphique: graphique.md
+- Ressources de calcul: materiel.md
+- Espaces de stockage: stockage.md
+- Logiciels: applications.md
+- Exemple de scripts pour quelques programmes:
+  - Gaussian 09: Gaussian09_F.md 
+- Transferts de données: transfert.md 
+- Utilisation des modules: module.md
+- Soumission de job: slurm.md
+- Bonnes pratiques: bp.md
+- FAQ: Questions.md
+- Charte d'utilisation du Mésocentre EXPLOR: chartes.md
+- Formulaires: formulaires.md
+#  - Commandes de bases:
+#  - Exemple de fichiers de soumission:
+
+#theme: 'readthedocs'
+#theme:  material
+theme : mkdocs
+#theme: yeti
+#theme_dir: explor_theme
+
+# Options
+#extra:
+#  palette:
+#    primary: 'red'
+#    accent: 'yellow'
+#  font:
+#    text: 'ubuntu'
+#    code: 'ubuntu Mono'
+
+#extra_javascript:
+#  - 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML'
+markdown_extensions:
+  - admonition
+  - codehilite
+#  - footnotes
+#  - pymdownx.arithmatex
+#  - pymdownx.betterem(smart_enable=all)
+#  - pymdownx.caret
+#  - pymdownx.critic
+#  - pymdownx.emoji:
+#      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+#  - pymdownx.magiclink
+#  - pymdownx.mark
+#  - pymdownx.smartsymbols
+#  - pymdownx.tasklist(custom_checkbox=true)
+
+#comments:
+#  theme_dir: theme
+#  theme:  cluster
