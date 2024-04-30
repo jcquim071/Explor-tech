@@ -35,8 +35,8 @@
 | Abinit               | 8.10.2 <br> 9.10.3                |      GPU       |
 | Abaqus*              | 2017                              |                |
 | Amber*               | 16 <br> 22                        |      GPU       |
-| Ansys Fluent*        | 17.2 <br> 18.0                    |                |
-| Caffe                | 1.0 <br> 2.0                      |      GPU       |         
+| Ansys Fluent*        | 17.2 <br> 18.0 <br> 22.1          |                |
+| Caffe                | 1.0 <br> 2.0                      |      GPU       | 
 | CASTEP*              | 16.1                              |                |
 | Cp2k                 | 4.1 <br> 6.1                      |                |
 | Crystal*             | 14                                |                |
@@ -46,7 +46,7 @@
 | FEFF                 | 9.0                               |                |
 | FreeFem++            | 3.60 <br> 3.62 <br> 4.11 <br> 4.14|                |
 | Gaussian*            | 03 <br> 09                        |                |
-| Gromacs              | 2016.3 <br> 5.1.4 2022.3 2023.2   |                |
+| Gromacs              | 5.1.4 <br> 2016.3 <br> 2022.3 <br> 2023.2   |                |
 | HyperWorks Solvers*  | 2017.2.1                          |                |
 | Lammps               | 2017 <br> 2018 <br> 2020 <br> 2022|                |
 | Matlab*              | r2017b <br> 2019b                 |                |
@@ -58,7 +58,7 @@
 | Siesta               | 4.0.1 <br> 4.1.5                  |                |
 | TeraChem*            | 1.9                               |                |
 | Uspex                | 9.4.4                             |                |
-| VASP*                | 5.4.1  <br> 5.4.4                 |                |    
+| VASP*                | 5.4.1  <br> 5.4.4                 |                |
 
 *Une preuve d'achat de licence vous sera demandee pour pouvoir utiliser ces applications.
 
@@ -69,7 +69,7 @@
 |----------------------|--------------------|
 | Avogadro             | 1.90.0             |
 | Ansys                |  18.0              |
-| GaussView            | 5.0.9              |  
+| GaussView            | 5.0.9              |
 | Gnuplot              | 4.6                |
 | Grace                |                    |
 | Matlab               | r2017b <br> r2019b |
@@ -81,7 +81,7 @@
 |----------------------|--------------------|
 | advisor              | 2018 <br> 2019     |
 | anaconda             | 2.5.1 <br> 3.5.1   |
-| cmake                | 3.10.2 <br> 3.15.5 |  
+| cmake                | 3.10.2 <br> 3.15.5 |
 | git                  | 2.15.1             |
 | gmsh                 | 3.0.6              |
 | idb                  | 2018               |
