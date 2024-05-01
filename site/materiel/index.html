@@ -768,14 +768,14 @@
 <td>120GB</td>
 <td>3750MB</td>
 <td>Omnipath 100Gb/s</td>
-<td>Oui</td>
+<td>Non</td>
 <td>137.6</td>
 </tr>
 <tr>
 <td><strong>std</strong></td>
 <td>cnc[01-48]</td>
 <td>DELL C6420</td>
-<td><a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor 2.1 Ghz, AVX512</a></td>
+<td><a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor 2.1 GHz, AVX512</a></td>
 <td>n/a</td>
 <td>48</td>
 <td>32</td>
@@ -783,7 +783,7 @@
 <td>180GB</td>
 <td>5625MB</td>
 <td>Omnipath 100Gb/s</td>
-<td>Oui</td>
+<td>Non</td>
 <td>63.9</td>
 </tr>
 <tr>
@@ -798,7 +798,7 @@
 <td>60GB</td>
 <td>3750MB</td>
 <td>Infiniband 40Gb/s</td>
-<td>Oui</td>
+<td>Non</td>
 <td>3.1</td>
 </tr>
 <tr>
@@ -812,7 +812,37 @@
 <td>128</td>
 <td>120GB</td>
 <td>15000MB</td>
-<td>Ethernet 10Gb/s</td>
+<td>Ethernet 100Gb/s</td>
+<td>Non</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td><strong>std</strong></td>
+<td>cni[25-28]</td>
+<td>Dell C6420</td>
+<td>[Intel Xeon Gold 6230 2.1 GHz, AVX512] (https://ark.intel.com/content/www/fr/fr/ark/products/192437/intel-xeon-gold-6230-processor-27-5m-cache-2-10-ghz)</td>
+<td>n/a</td>
+<td>40</td>
+<td>4</td>
+<td>160</td>
+<td>180GB</td>
+<td>4500MB</td>
+<td>Infiniband 100Gb/s</td>
+<td>Non</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td><strong>std</strong></td>
+<td>cnl[01]</td>
+<td>Dell R6615</td>
+<td>[AMD EPYC 9254 2.9 GHz, AVX2] (https://www.amd.com/fr/products/cpu/amd-epyc-9254)</td>
+<td>n/a</td>
+<td>24</td>
+<td>1</td>
+<td>24</td>
+<td>240GB</td>
+<td>10000MB</td>
+<td>Infiniband 100Gb/s</td>
 <td>Non</td>
 <td>7.2</td>
 </tr>
@@ -848,21 +878,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Processeurs Intel Skylake (6ème génération) :</strong></p>
-<p>La partition "skylake" (<strong>sky</strong>) comprend 48 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Skylake <a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 192 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
-<div class="admonition note">
-<p>La seule véritable différence entre les processeurs Skylake (6ème génération) et Broadwell (5ème génération) est que les premiers possèdent des instructions de calcul plus efficaces.
-Donc ils sont capables de générer plus d'opérations par secondes (flops) que les Broadwell a une seule condition de recompiler les programmes avec les bonnes options pour permettre d'utiliser ces nouveaux registres (AVX512).</p>
-</div>
-<p><strong>Processeurs Intel Broadwell (5ème génération) :</strong></p>
-<p>La partition "standard" (<strong>std</strong>)  comprend 128 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 128 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
-<p>La partition  "haute-fréquence" (<strong>hf</strong>) comprend 16 nœuds connectés en réseau 10Gb ethernet, chaque nœud disposant de deux processeurs <a href="http://ark.intel.com/fr/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">Intel Xeon E5-2637 v4</a> chacun comprenant 4 cœurs cadencés à 3.5Ghz et 128 Go de RAM. Elle est adaptée aux applications sérielles ou faiblement parallélisées.</p>
-<p>La partition <strong>p100</strong> comprend 6 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 4 cartes <a href="https://www.techpowerup.com/gpudb/2888/tesla-p100-pcie-16-gb">NVIDIA Tesla P100</a>.</p>
-<p>La partition <strong>GTX</strong> comprend 4 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-26833
--v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 2 cartes <a href="https://www.techpowerup.com/gpudb/288
-77/geforce-gtx-1080-ti">GEFORCE GTX 1080 Ti</a></p>
-<p><strong>Processeurs Intel de Ivy Bridge (3ème génération) :</strong></p>
-<p>La partition <strong>ivy</strong> comprend 12 nœuds connectés en réseau Infiniband 40Gb à basse-latence, chaque nœud disposant de deux processeurs <a href="https://ark.intel.com/fr/products/75267/Intel-Xeon-Processor-E5-2640-v2-20M-Cache-2_00-GHz">Intel Xeon E5-2640v2 2.0 GHz</a> chacun comprenant 8 cœurs cadencés à 2.0 Ghz et 64 Go de RAM. Elle est adaptée aux applications parallèles.</p>
 <h3 id="materiel-heberge">Matériel Hébergé</h3>
 <p>Le mésocentre a également vocation a héberger du matériel. Contactez-nous  <a href="mailto:explor-contact@univ-lorraine.fr">explor-contact@univ-lorraine.fr</a> pour toute demande d'informations complémentaires concernant l'hébergement de matériel.</p>
 <table>
@@ -997,6 +1012,21 @@ Donc ils sont capables de générer plus d'opérations par secondes (flops) que 
 </tr>
 </tbody>
 </table>
+<p><strong>Processeurs Intel Skylake (6ème génération) :</strong></p>
+<p>Les nœuds "skylake" (<strong>cnc[01-64] et cnf[01-08]</strong>) comprend 72 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Skylake <a href="https://ark.intel.com/products/120492/Intel-Xeon-Gold-6130-Processor-22M-Cache-2_10-GHz">Intel Xeon Gold 6130 Processor</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 192 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
+<div class="admonition note">
+<p>La seule véritable différence entre les processeurs Skylake (6ème génération) et Broadwell (5ème génération) est que les premiers possèdent des instructions de calcul plus efficaces.
+Donc ils sont capables de générer plus d'opérations par secondes (flops) que les Broadwell a une seule condition de recompiler les programmes avec les bonnes options pour permettre d'utiliser ces nouveaux registres (AVX512).</p>
+</div>
+<p><strong>Processeurs Intel Broadwell (5ème génération) :</strong></p>
+<p>Les nœuds "standard" (<strong>cn(a/b)[01-64]</strong>)  comprend 128 nœuds connectés en réseau 100Gb à basse-latence, chaque nœud disposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds) et 128 Go de RAM. Elle est adaptée aux applications massivement parallèles.</p>
+<p>Les nœuds "haute frecuence"(<strong>cne[01-16]</strong>) comprend 16 nœuds connectés en réseau 10Gb ethernet, chaque nœud disposant de deux processeurs <a href="http://ark.intel.com/fr/products/92983/Intel-Xeon-Processor-E5-2637-v4-15M-Cache-3_50-GHz">Intel Xeon E5-2637 v4</a> chacun comprenant 4 cœurs cadencés à 3.5Ghz et 128 Go de RAM. Elle est adaptée aux applications sérielles ou faiblement parallélisées.</p>
+<p>Les nœuds gpu <strong>gpb[01-06]</strong> comprend 6 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-2683-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 4 cartes <a href="https://www.techpowerup.com/gpudb/2888/tesla-p100-pcie-16-gb">NVIDIA Tesla P100</a>.</p>
+<p>Les nœuds gou "GTX" <strong>gpc[01-04]</strong> comprend 4 nœuds connectés en reseau 100Gb à basse-latence , chaque nœud diposant de deux processeurs de type Broadwell <a href="http://ark.intel.com/products/91766/Intel-Xeon-Processor-E5-26833
+-v4-40M-Cache-2_10-GHz">Intel Xeon E5-2683 v4</a> (chacun comprenant 16 cœurs cadencés à 2.10Ghz, soit 32 cœurs par nœuds), 128 Go de RAM et de 2 cartes <a href="https://www.techpowerup.com/gpudb/288
+77/geforce-gtx-1080-ti">GEFORCE GTX 1080 Ti</a></p>
+<p><strong>Processeurs Intel de Ivy Bridge (3ème génération) :</strong></p>
+<p>Les nœuds <strong>cndi[01-12]</strong> comprend 12 nœuds connectés en réseau Infiniband 40Gb à basse-latence, chaque nœud disposant de deux processeurs <a href="https://ark.intel.com/fr/products/75267/Intel-Xeon-Processor-E5-2640-v2-20M-Cache-2_00-GHz">Intel Xeon E5-2640v2 2.0 GHz</a> chacun comprenant 8 cœurs cadencés à 2.0 Ghz et 64 Go de RAM. Elle est adaptée aux applications parallèles.</p>
 <h2 id="limitations-en-duree-et-en-ressources-dun-job">Limitations en durée et en ressources d'un job</h2>
 <p>Les limitations suivantes en terme de ressources et de durées sont appliquées au mésocentre pour chaque job soumis :</p>
 <table>
